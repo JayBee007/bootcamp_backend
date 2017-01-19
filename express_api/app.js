@@ -1,7 +1,10 @@
 var express = require("express");
 var app = express();
+var request = require("request");
+var bodyParser = require('body-parser');
 
-app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'));
 app.set("view engine", "ejs");
 
 app.get("/",function(req,res){
@@ -9,7 +12,16 @@ app.get("/",function(req,res){
 });
 
 app.post("/search", function(req, res){
-    res.send("search post route");
+    var query = req.body.query;
+    var url = "http://www.omdbapi.com/?s=" + query;
+    
+    request(url,function(error, response, body) {
+       if(!error && response.statusCode === 200) {
+           res.send(JSON.parse(response.body))
+       } 
+    });
+    
+    
 });
 
 
