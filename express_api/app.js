@@ -8,6 +8,10 @@ app.get("/",function(req,res){
     res.render("index"); 
 });
 
+app.post("/search", function(req, res){
+    res.send("search post route");
+});
+
 
 
 
