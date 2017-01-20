@@ -1,0 +1,28 @@
+<% include header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-push-3">
+            <a class="btn btn-success btn-block" href="/">Back</a>    
+        </div>
+    </div>
+    
+    <div class="row">
+        
+        <% data["Search"].forEach(function (movie) { %>
+        
+            <div class="col-md-4 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= movie["Poster"] %>">
+                    <div class="caption text-center"><%= movie["Title"] %></div>
+                    <p class="text-center"><%= movie["Year"] %></p>
+                </div>
+            </div>
+        
+        <% }); %>
+        
+    </div>
+</div>
+
+
+<% include footer %>

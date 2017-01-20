@@ -16,3 +16,12 @@ padding-top: 70px;
 form{
     margin-top: 50px;
 }
+
+.row {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.btn{
+    margin-bottom: 20px;
+}

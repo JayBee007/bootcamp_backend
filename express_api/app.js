@@ -17,7 +17,9 @@ app.post("/search", function(req, res){
     
     request(url,function(error, response, body) {
        if(!error && response.statusCode === 200) {
-           res.send(JSON.parse(response.body))
+           var data = JSON.parse(response.body);
+        //   console.log(data);
+           res.render("partials/search", {data: data});
        } 
     });
     
