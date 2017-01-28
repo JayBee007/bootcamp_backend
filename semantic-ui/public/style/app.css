@@ -1,0 +1,10 @@
+.ui.menu .item:before,
+.ui.menu .right.menu .item:last-of-type:after { /* this line is the quick fix */
+  position: absolute;
+  content: '';
+  top: 0%;
+  right: 0px;
+  height: 100%;
+  width: 1px;
+  background: rgba(34, 36, 38, 0.1);
+}
