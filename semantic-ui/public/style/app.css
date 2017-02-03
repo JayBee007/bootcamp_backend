@@ -35,6 +35,14 @@
     display: none;
 }
 
+#index{
+    padding: 20px 0;
+}
+
+#index i{
+    margin-bottom: 10px;
+}
+
 footer{
     padding-top: 20px;
     padding-bottom: 20px;
