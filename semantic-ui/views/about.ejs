@@ -1,12 +1,21 @@
 <!doctype html>
 <html>
-    <head>
-        <title>About | Getting Started With Semantic UI</title>
-        <% include partials/head %>
-    </head>
-    <body rel=3>
-        <% include partials/header %>
-        <% include partials/footer %>
-    </body>
-    
+
+<head>
+    <title>About | Getting Started With Semantic UI</title>
+    <% include partials/head %>
+</head>
+
+<body rel=3>
+    <% include partials/header %>
+    <div class="ui container">
+        <div class="ui breadcrumb">
+            <a href="/" class="section">Home</a>
+            <i class="right icon angle right divider"></i>
+            <a href="/about" class="active section">About</a>
+        </div>    
+    </div>
+    <% include partials/footer %>
+</body>
+
 </html>
