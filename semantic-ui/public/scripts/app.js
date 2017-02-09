@@ -9,4 +9,8 @@ $("document").ready(function(){
    
    $(".ui.small.circular.image").dimmer({on: "hover"});
    
+   $(".about img").on("click", function(){
+      $(".ui.page.dimmer").dimmer("show");
+   })
+   
 });
