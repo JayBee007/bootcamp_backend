@@ -62,6 +62,23 @@ footer a.item {
     color:rgba(0,0,0,0.87) !important;
 }
 
+div.ui.breadcrumb {
+    display: block;
+    margin-bottom: 20px;
+}
+
+div img.ui.medium.image{
+    width:250px;
+}
+
+.about p{
+    line-height: 1.6;
+}
+
+.about{
+    margin-bottom: 20px;
+}
+
 
 /*smartphone*/
 @media (min-width:501px){
