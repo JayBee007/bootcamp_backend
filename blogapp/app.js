@@ -14,10 +14,19 @@ var blogSchema = mongoose.Schema({
 
 var Blog = mongoose.model("blog", blogSchema);
 
-Blog.create({
-   title: "Blog Title",
-   image: "https://farm6.staticflickr.com/5601/14986371364_0db6f0aeb2.jpg",
-   body: "Lorem ipusm dolor amit and something else"
+//RESTful Routes
+app.get("/", function(req,res){
+   res.redirect("/blogs"); 
+});
+app.get("/blogs", function(req,res){
+   Blog.find({}, function(err, result){
+      if(err){
+          console.log(err);
+      }else {
+            res.render("index", {blogs: result});        
+      }
+   });
+   
 });
 
 app.set("view engine", "ejs");
