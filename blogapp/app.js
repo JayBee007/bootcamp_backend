@@ -3,6 +3,11 @@ var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
+
+
 mongoose.connect("mongodb://localhost/blogapp");
 
 var blogSchema = mongoose.Schema({
@@ -29,10 +34,23 @@ app.get("/blogs", function(req,res){
    
 });
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: false}));
+// New Route
+app.get("/blogs/new", function(req,res){
+   res.render("new");
+});
 
+// Create Route
+app.post("/blogs", function(req,res){
+   //create blog
+   Blog.create(req.body.blog, function(err, newBlog){
+      if(err){
+         res.render("new");
+      }else {
+         // then redirect to blogs
+         res.redirect("/blogs");
+      }
+   });
+});
 
 
 
