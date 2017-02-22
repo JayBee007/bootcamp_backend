@@ -52,7 +52,11 @@ app.post("/blogs", function(req,res){
    });
 });
 
+// Show Route
 
+app.get("/blogs/:id", function(req, res){
+   res.send("SHOW PAGE");
+});
 
 
 
