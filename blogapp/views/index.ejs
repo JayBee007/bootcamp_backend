@@ -7,6 +7,8 @@
             <div>
                 <h2><%= blog.title %></h2>
                 <img src="<%= blog.image %>">
+                <p><%= blog.body.substring(0, 200) %>...</p>
+                <a class="ui basic purple button" href="/blogs/<%= blog._id %>">Read More...</a>
                 <p><%= blog.created %></p>
             </div>
         
