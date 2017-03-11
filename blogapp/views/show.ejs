@@ -13,7 +13,8 @@
         <div class="description">
             <p><%= blog.body%></p>
         </div>
-        <form class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+        <a class="ui basic green button" href="/blogs/<%=blog._id%>/edit">Edit</a>
+        <form style="display:inline;" class="ui form" action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
             <button class="ui basic red button">Delete</button>
         </form>
     </div>
