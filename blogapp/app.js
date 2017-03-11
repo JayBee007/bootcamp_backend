@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect("mongodb://localhost/blogapp");
 
-var blogSchema = mongoose.Schema({
+var blogSchema = new mongoose.Schema({
    title:String,
    image:String,
    body:String,
