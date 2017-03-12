@@ -1,13 +1,15 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
+var expressSanitizer = require("express-sanitizer");
 var mongoose = require("mongoose");
 var methodOverride = require("method-override");
 
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(expressSanitizer());
 
 
 
